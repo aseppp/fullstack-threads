@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { sidebarLinks } from "@/constants";
-import { useAuth } from "@clerk/nextjs";
-import { SignedIn, SignOutButton } from "@clerk/nextjs";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { BiLogOut } from "react-icons/bi";
+import { sidebarLinks } from '@/constants';
+import { useAuth } from '@clerk/nextjs';
+import { SignedIn, SignOutButton } from '@clerk/nextjs';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { BiLogOut } from 'react-icons/bi';
 
 const LeftSidebar = () => {
   const pathname = usePathname();
@@ -17,7 +17,7 @@ const LeftSidebar = () => {
         {sidebarLinks.map((link) => {
           const isActive = (pathname.includes(link.path) && link.path.length > 1) || pathname === link.path;
 
-          if (link.path === "/profile") link.path = `${link.path}/${userId}`;
+          if (link.path === '/profile') link.path = `${link.path}/${userId}`;
 
           return (
             <Link
@@ -29,7 +29,7 @@ const LeftSidebar = () => {
               }`}
             >
               <p>{link.icon}</p>
-              <p className="text-light-1 max-lg:hidden">{link.label}</p>
+              <p className="flex items-center justify-center text-light-1 max-lg:hidden">{link.label}</p>
             </Link>
           );
         })}
@@ -39,7 +39,7 @@ const LeftSidebar = () => {
         <SignedIn>
           <SignOutButton>
             <div className="flex items-center gap-2 cursor-pointer">
-              <BiLogOut size="35px" color="#ffff" /> <p className="text-heading4-medium text-light-1">Log Out</p>
+              <BiLogOut size="25px" color="#ffff" /> <p className="text-heading2-medium text-light-1">Log Out</p>
             </div>
           </SignOutButton>
         </SignedIn>

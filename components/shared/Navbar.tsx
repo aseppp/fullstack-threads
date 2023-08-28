@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React from "react";
-import { OrganizationSwitcher, SignedIn, SignOutButton } from "@clerk/nextjs";
-import { dark } from "@clerk/themes";
-import Image from "next/image";
-import Link from "next/link";
-import { BiLogOut } from "react-icons/bi";
+import React from 'react';
+import { OrganizationSwitcher, SignedIn, SignOutButton } from '@clerk/nextjs';
+import { dark } from '@clerk/themes';
+import Image from 'next/image';
+import Link from 'next/link';
+import { BiLogOut } from 'react-icons/bi';
 
 const Navbar = () => {
   return (
@@ -15,12 +15,12 @@ const Navbar = () => {
         <p className="text-heading3-bold text-light-1">Threads</p>
       </Link>
 
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-2">
         <div className="block md:hidden">
           <SignedIn>
             <SignOutButton>
               <div className="flex cursor-pointer">
-                <BiLogOut size="24px" color="#ffff" />
+                <BiLogOut size="24px" color="#535353" />
               </div>
             </SignOutButton>
           </SignedIn>
@@ -30,7 +30,7 @@ const Navbar = () => {
           appearance={{
             baseTheme: dark,
             elements: {
-              organizationSwitcherTrigger: "w-[100px] md:w-fit py-2 px-4",
+              organizationSwitcherTrigger: 'w-[100px] md:w-fit py-2 px-4',
             },
           }}
         />
