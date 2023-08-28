@@ -1,16 +1,16 @@
-import '../globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ClerkProvider } from '@clerk/nextjs';
-import { dark } from '@clerk/themes';
-import Navbar from '@/components/shared/Navbar';
-import LeftSidebar from '@/components/shared/LeftSidebar';
+import "../globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
+import Navbar from "@/components/shared/Navbar";
+import LeftSidebar from "@/components/shared/LeftSidebar";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Threads',
-  description: 'Created by asepp, inspired by JavaScriptMastery',
+  title: "Threads",
+  description: "Created by asepp, inspired by JavaScriptMastery",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

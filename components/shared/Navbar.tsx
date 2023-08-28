@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { OrganizationSwitcher, SignedIn, SignOutButton } from '@clerk/nextjs';
-import { dark } from '@clerk/themes';
-import Image from 'next/image';
-import Link from 'next/link';
-import { BiLogOut } from 'react-icons/bi';
+import React from "react";
+import { OrganizationSwitcher, SignedIn, SignOutButton } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
+import Image from "next/image";
+import Link from "next/link";
+import { BiLogOut } from "react-icons/bi";
 
 const Navbar = () => {
   return (
@@ -30,7 +30,7 @@ const Navbar = () => {
           appearance={{
             baseTheme: dark,
             elements: {
-              organizationSwitcherTrigger: 'py-2 px-4',
+              organizationSwitcherTrigger: "w-[100px] md:w-fit py-2 px-4",
             },
           }}
         />
