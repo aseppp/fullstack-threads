@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import * as z from 'zod';
-import Image from 'next/image';
-import { useForm } from 'react-hook-form';
-import { usePathname, useRouter } from 'next/navigation';
-import { ChangeEvent, useState } from 'react';
-import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from "zod";
+import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { usePathname, useRouter } from "next/navigation";
+import { ChangeEvent, useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
-import { useUploadThing } from '@/lib/uploadthing';
-import { isBase64Image } from '@/lib/utils';
+import { useUploadThing } from "@/lib/uploadthing";
+import { isBase64Image } from "@/lib/utils";
 
-import { UserValidation } from '@/lib/validations/user';
-import { updateUser } from '@/lib/actions/user.actions';
+import { UserValidation } from "@/lib/validations/user";
+import { updateUser } from "@/lib/actions/user.actions";
 
 interface Props {
   user: {
@@ -33,17 +33,17 @@ interface Props {
 const AccountProfile = ({ user, btnTitle }: Props) => {
   const router = useRouter();
   const pathname = usePathname();
-  const { startUpload } = useUploadThing('media');
+  const { startUpload } = useUploadThing("media");
 
   const [files, setFiles] = useState<File[]>([]);
 
   const form = useForm<z.infer<typeof UserValidation>>({
     resolver: zodResolver(UserValidation),
     defaultValues: {
-      profile_photo: user?.image ? user.image : '',
-      name: user?.name ? user.name : '',
-      username: user?.username ? user.username : '',
-      bio: user?.bio ? user.bio : '',
+      profile_photo: user?.image ? user.image : "",
+      name: user?.name ? user.name : "",
+      username: user?.username ? user.username : "",
+      bio: user?.bio ? user.bio : "",
     },
   });
 
@@ -68,10 +68,10 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
       image: values.profile_photo,
     });
 
-    if (pathname === '/profile/edit') {
+    if (pathname === "/profile/edit") {
       router.back();
     } else {
-      router.push('/');
+      router.push("/");
     }
   };
 
@@ -84,10 +84,10 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
       const file = e.target.files[0];
       setFiles(Array.from(e.target.files));
 
-      if (!file.type.includes('image')) return;
+      if (!file.type.includes("image")) return;
 
       fileReader.onload = async (event) => {
-        const imageDataUrl = event.target?.result?.toString() || '';
+        const imageDataUrl = event.target?.result?.toString() || "";
         fieldChange(imageDataUrl);
       };
 
@@ -97,7 +97,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
 
   return (
     <Form {...form}>
-      <form className="flex flex-col justify-start gap-8" onSubmit={form.handleSubmit(onSubmit)}>
+      <form className="flex flex-col justify-start gap-6" onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
           name="profile_photo"
@@ -172,7 +172,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
           )}
         />
 
-        <Button type="submit" className="btn-continue">
+        <Button type="submit" className="btn-cta">
           {btnTitle}
         </Button>
       </form>

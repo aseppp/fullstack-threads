@@ -46,7 +46,7 @@
   @apply border border-dark-4 bg-dark-4 text-light-1 !important;
 }
 
-.btn-continue {
+.btn-cta {
   @apply bg-primary-green !important;
 }
 

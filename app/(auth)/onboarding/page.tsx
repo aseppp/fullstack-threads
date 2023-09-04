@@ -29,7 +29,7 @@ const page = async () => {
       <h1 className="head-text">Onboarding</h1>
       <p className="mt-3 text-base-regular text-light-2">Complete your profile now, to use Threds.</p>
 
-      <section className="mt-6 bg-dark-1 border border-gray-900 p-10 rounded">
+      <section className="mt-4 bg-dark-1 border border-gray-900 p-10 rounded">
         <AccountProfile user={userData} btnTitle="Continue" />
       </section>
     </main>
