@@ -71,3 +71,15 @@
 .bottombar_link {
   @apply relative flex flex-col items-center gap-2 rounded-lg p-2 sm:flex-1 sm:px-2 sm:py-2.5;
 }
+
+.searchbar {
+  @apply flex items-center gap-2 rounded-lg bg-dark-3 px-4 py-2;
+}
+
+.searchbar_input {
+  @apply border-none bg-dark-3 text-base-regular text-light-1 outline-none !important;
+}
+
+.no-focus {
+  @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+}
