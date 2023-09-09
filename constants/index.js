@@ -26,7 +26,7 @@ export const sidebarLinks = [
   },
   {
     label: "Comunity",
-    path: "/comunity",
+    path: "/communities",
     icon: <BsPeople size={"25px"} color="white" />,
   },
   {
@@ -40,4 +40,10 @@ export const profileTabs = [
   { value: "threads", label: "Threads", icon: <BsFillReplyAllFill /> },
   { value: "replies", label: "Replies", icon: <MdOutlinePeopleAlt /> },
   { value: "tagged", label: "Tagged", icon: <AiOutlineTag /> },
+];
+
+export const communityTabs = [
+  { value: "threads", label: "Threads", icon: <BsFillReplyAllFill /> },
+  { value: "replies", label: "Member", icon: <MdOutlinePeopleAlt /> },
+  { value: "tagged", label: "Request", icon: <AiOutlineTag /> },
 ];
