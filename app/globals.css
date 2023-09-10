@@ -10,7 +10,7 @@
 
   /* NAVBAR */
   .navbar {
-    @apply fixed top-0 z-30 flex w-full items-center justify-between bg-dark-1 px-4 py-3;
+    @apply fixed top-0 z-30 flex w-full items-center justify-between bg-dark-1 px-4 py-3 md:px-6;
   }
 
   /* LEFT SIDEBAR */
@@ -55,7 +55,9 @@
   @apply max-sm:hidden;
 }
 
-.cl-organizationSwitcherTrigger .cl-organizationPreview .cl-organizationPreviewTextContainer {
+.cl-organizationSwitcherTrigger
+  .cl-organizationPreview
+  .cl-organizationPreviewTextContainer {
   @apply max-sm:hidden;
 }
 
@@ -82,4 +84,44 @@
 
 .no-focus {
   @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+}
+
+/* Comment Form */
+.comment-form {
+  @apply mt-5 flex items-center gap-4 border-y border-y-dark-4 py-5 max-xs:flex-col !important;
+}
+
+.comment-form_btn {
+  @apply rounded-md bg-primary-green px-8 py-2 !important;
+}
+
+.box-comment {
+  @apply bg-dark-1 py-2 !important;
+}
+
+/* Activity */
+.activity-card {
+  @apply flex items-center gap-2 rounded-md bg-dark-2 px-7 py-4;
+}
+
+/* User card */
+.user-card {
+  @apply flex flex-col justify-between gap-4 max-xs:rounded-xl max-xs:bg-dark-3 max-xs:p-4 xs:flex-row xs:items-center;
+}
+
+.user-card_avatar {
+  @apply flex flex-1 items-start justify-start gap-3 xs:items-center;
+}
+
+.user-card_btn {
+  @apply h-auto min-w-[74px] rounded-lg bg-primary-green text-[12px]  !important;
+}
+
+/* Community Card */
+.community-card {
+  @apply w-full rounded-lg bg-dark-1 px-4 py-5 sm:w-96;
+}
+
+.community-card_btn {
+  @apply rounded-lg bg-primary-green px-5 py-1.5 text-small-regular !important;
 }

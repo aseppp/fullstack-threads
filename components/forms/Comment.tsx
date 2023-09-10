@@ -6,7 +6,13 @@ import { useForm } from "react-hook-form";
 import { usePathname } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@/components/ui/form";
 
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
@@ -31,7 +37,12 @@ const Comment = ({ threadId, currentUserImg, currentUserId }: Props) => {
   });
 
   const onSubmit = async (values: z.infer<typeof CommentValidation>) => {
-    await addCommentToThread(threadId, values.thread, JSON.parse(currentUserId), pathname);
+    await addCommentToThread(
+      threadId,
+      values.thread,
+      JSON.parse(currentUserId),
+      pathname
+    );
 
     form.reset();
   };
@@ -54,13 +65,18 @@ const Comment = ({ threadId, currentUserImg, currentUserId }: Props) => {
                 />
               </FormLabel>
               <FormControl className="border-none bg-transparent">
-                <Input type="text" {...field} placeholder="Comment..." className="no-focus text-light-1 outline-none" />
+                <Input
+                  type="text"
+                  {...field}
+                  placeholder="Comment..."
+                  className="no-focus text-light-1 outline-none box-comment p-5"
+                />
               </FormControl>
             </FormItem>
           )}
         />
 
-        <Button type="submit" className="btn-cta mt-5">
+        <Button type="submit" className="comment-form_btn btn-cta">
           Reply
         </Button>
       </form>
